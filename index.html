@@ -17,357 +17,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 02: Orçamento Doméstico – Parte 1</title>
+    <title>Seções de Aulas</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f8fafc;
-            color: #1e293b;
-            line-height: 1.6;
-            padding: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        header {
-            text-align: center;
-            padding: 30px;
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            color: white;
-            border-radius: 16px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.2);
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            color: #1e40af;
-            margin: 30px 0 15px;
-            font-size: 1.4rem;
-            border-left: 4px solid #3b82f6;
-            padding-left: 12px;
-        }
-
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
-
-        p {
-            margin-bottom: 15px;
-            font-size: 1.02rem;
-        }
-
-        ul {
-            margin-left: 25px;
-            margin-bottom: 18px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        .destaque {
-            background-color: #eff6ff;
-            border-left: 5px solid #2563eb;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 18px 0;
-        }
-
-        .alerta {
-            background-color: #fffbeb;
-            border-left: 5px solid #f59e0b;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 18px 0;
-        }
-
-        .esquema {
-            display: flex;
-            justify-content: center;
-            margin: 25px 0;
-        }
-
-        .esquema-svg {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .grade-despesas {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 18px;
+        section {
             margin: 20px 0;
-        }
-
-        .tipo-despesa {
-            padding: 18px;
-            border-radius: 10px;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        .fixas { background-color: #dbeafe; color: #1e40af; }
-        .variaveis { background-color: #dcfce7; color: #166534; }
-        .essenciais { background-color: #fef3c7; color: #92400e; }
-        .superfluas { background-color: #f3e8ff; color: #6b21a8; }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            color: #64748b;
-            font-size: 0.95rem;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Aula 02: Orçamento Doméstico – Parte 1</h1>
-        <p>Inflação, poder de compra e planejamento financeiro</p>
-    </header>
+    <h1>Material de Estudo</h1>
 
-    <div class="card">
-        <h2>📉 Inflação e Poder de Compra</h2>
-        <p>Mesmo que a renda da família permaneça a mesma, o aumento dos preços causado pela inflação reduz o poder de compra. Isso significa que o dinheiro passa a comprar menos produtos e serviços do que antes. Assim, despesas como alimentação, transporte, moradia e contas básicas consomem uma parte maior do orçamento familiar.</p>
-        
-        <div class="esquema">
-            <svg class="esquema-svg" width="650" height="220" viewBox="0 0 650 220" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="dinheiroGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
-                    </linearGradient>
-                    <linearGradient id="setaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-                
-                <!-- Cenário sem inflação -->
-                <rect x="30" y="40" width="240" height="140" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
-                <text x="150" y="65" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e40af">Sem Inflação</text>
-                <rect x="50" y="85" width="200" height="40" rx="6" fill="url(#dinheiroGrad)"/>
-                <text x="150" y="110" text-anchor="middle" font-size="14" fill="white">Renda = Poder de compra total</text>
-                <text x="150" y="145" text-anchor="middle" font-size="12" fill="#475569">Compram mais produtos ✅</text>
-                
-                <!-- Seta de diminuição -->
-                <path d="M290 110 L350 110 L340 100 M350 110 L340 120" stroke="url(#setaGrad)" stroke-width="4" fill="none" stroke-linecap="round"/>
-                <text x="320" y="85" text-anchor="middle" font-size="13" fill="#dc2626">↑ Preços</text>
-                
-                <!-- Cenário com inflação -->
-                <rect x="370" y="40" width="240" height="140" rx="12" fill="#fef2f2" stroke="#f87171" stroke-width="2"/>
-                <text x="490" y="65" text-anchor="middle" font-size="16" font-weight="bold" fill="#b91c1c">Com Inflação</text>
-                <rect x="390" y="85" width="130" height="40" rx="6" fill="#fca5a5"/>
-                <text x="455" y="110" text-anchor="middle" font-size="14" fill="#7f1d1d">Mesma Renda</text>
-                <text x="490" y="145" text-anchor="middle" font-size="12" fill="#7f1d1d">Compram menos itens ⚠️</text>
-                <rect x="525" y="85" width="55" height="40" rx="6" fill="#fecaca" stroke-dasharray="4"/>
-            </svg>
-        </div>
-
-        <p>Por isso, o planejamento financeiro torna-se ainda mais importante. Ele ajuda a controlar os gastos, definir prioridades, evitar dívidas e organizar uma reserva para imprevistos. Além disso, permite que a família ajuste o orçamento de acordo com a nova realidade dos preços, mantendo o equilíbrio financeiro e buscando preservar sua qualidade de vida.</p>
-        
-        <div class="destaque">
-            <strong>Em resumo:</strong> A inflação diminui o poder de compra, e o planejamento financeiro é essencial para administrar melhor os recursos disponíveis e enfrentar o aumento do custo de vida.
-        </div>
-    </div>
-
-    <div class="card">
-        <h2>🏠 Economia Doméstica</h2>
-        <p>Economia doméstica é a administração do dinheiro e dos recursos de uma casa ou família, com o objetivo de atender às necessidades do dia a dia de forma organizada e equilibrada.</p>
-
-        <div class="esquema">
-            <svg class="esquema-svg" width="550" height="250" viewBox="0 0 550 250" xmlns="http://www.w3.org/2000/svg">
-                <rect x="175" y="20" width="200" height="70" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
-                <text x="275" y="62" text-anchor="middle" font-size="17" font-weight="bold" fill="#1e40af">Economia Doméstica</text>
-                
-                <line x1="275" y1="90" x2="275" y2="110" stroke="#94a3b8" stroke-width="2"/>
-                
-                <rect x="30" y="110" width="140" height="50" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
-                <text x="100" y="140" text-anchor="middle" font-size="12" fill="#166534">📊 Planejar orçamento</text>
-                
-                <rect x="205" y="110" width="140" height="50" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
-                <text x="275" y="140" text-anchor="middle" font-size="12" fill="#92400e">💰 Controlar receitas e despesas</text>
-                
-                <rect x="380" y="110" width="140" height="50" rx="8" fill="#f3e8ff" stroke="#a855f7" stroke-width="2"/>
-                <text x="450" y="140" text-anchor="middle" font-size="12" fill="#6b21a8">✂️ Evitar gastos desnecessários</text>
-                
-                <rect x="115" y="175" width="140" height="50" rx="8" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2"/>
-                <text x="185" y="205" text-anchor="middle" font-size="12" fill="#0369a1">💧 Economizar recursos</text>
-                
-                <rect x="295" y="175" width="140" height="50" rx="8" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
-                <text x="365" y="205" text-anchor="middle" font-size="12" fill="#be185d">🎯 Poupar para o futuro</text>
-            </svg>
-        </div>
-
-        <p class="destaque"><strong>Em resumo:</strong> Economia doméstica é o conjunto de práticas que ajuda a família a usar seus recursos de forma consciente, garantindo estabilidade financeira e melhor qualidade de vida.</p>
-    </div>
-
-    <div class="card">
-        <h2>📋 Classificação das Despesas</h2>
-        <p><em>"Nem todo gasto é igual. Existem gastos que somos obrigados a pagar. Outros dependem do nosso consumo. E alguns podem ser evitados."</em></p>
-        
-        <p>A classificação divide as despesas em quatro tipos:</p>
-
-        <div class="grade-despesas">
-            <div class="tipo-despesa fixas">
-                <strong>1. Fixas</strong>
-                <p style="font-size:0.9rem; margin-top:8px;">Valor praticamente igual todos os meses (ex.: aluguel, internet)</p>
-            </div>
-            <div class="tipo-despesa variaveis">
-                <strong>2. Variáveis</strong>
-                <p style="font-size:0.9rem; margin-top:8px;">Mudam conforme o consumo (ex.: energia, água)</p>
-            </div>
-            <div class="tipo-despesa essenciais">
-                <strong>3. Essenciais</strong>
-                <p style="font-size:0.9rem; margin-top:8px;">Imprescindíveis para a sobrevivência (ex.: alimentação, moradia)</p>
-            </div>
-            <div class="tipo-despesa superfluas">
-                <strong>4. Supérfluas</strong>
-                <p style="font-size:0.9rem; margin-top:8px;">Não são essenciais (ex.: lazer, assinaturas extras)</p>
-            </div>
-        </div>
-
-        <div class="alerta">
-            <strong>⚠️ Atenção:</strong> "Não existe problema em gastar com lazer. O problema aparece quando o lazer impede o pagamento das despesas essenciais." Despesas supérfluas podem ser reduzidas em momentos de aperto financeiro.
-        </div>
-    </div>
-
-    <div class="card">
-        <h2>🛒 Cesta Básica: Por que é importante?</h2>
-        <p>A cesta básica reúne alimentos e produtos essenciais para o dia a dia (arroz, feijão, óleo, leite, açúcar etc.).</p>
-
-        <div class="esquema">
-            <svg class="esquema-svg" width="600" height="230" viewBox="0 0 600 230" xmlns="http://www.w3.org/2000/svg">
-                <rect x="180" y="20" width="240" height="90" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
-                <text x="300" y="55" text-anchor="middle" font-size="17" font-weight="bold" fill="#92400e">🛒 Cesta Básica</text>
-                <text x="300" y="80" text-anchor="middle" font-size="12" fill="#78350f">Produtos essenciais de consumo diário</text>
-                
-                <line x1="300" y1="110" x2="300" y2="125" stroke="#d97706" stroke-width="2"/>
-                
-                <rect x="30" y="130" width="170" height="80" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
-                <text x="115" y="155" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">🍎 Alimentação adequada</text>
-                <text x="115" y="180" text-anchor="middle" font-size="11" fill="#475569">Garante o acesso a alimentos essenciais</text>
-                
-                <rect x="215" y="130" width="170" height="80" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
-                <text x="300" y="155" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">📊 Indicador de inflação</text>
-                <text x="300" y="180" text-anchor="middle" font-size="11" fill="#475569">Ajuda a acompanhar o custo de vida</text>
-                
-                <rect x="400" y="130" width="170" height="80" rx="8" fill="#f3e8ff" stroke="#a855f7" stroke-width="2"/>
-                <text x="485" y="155" text-anchor="middle" font-size="13" font-weight="bold" fill="#6b21a8">💪 Qualidade de vida</text>
-                <text x="485" y="180" text-anchor="middle" font-size="11" fill="#475569">Avalia o poder de compra da população</text>
-            </svg>
-        </div>
-
-        <ul>
-            <li>✅ Garante acesso a alimentos essenciais para uma alimentação adequada.</li>
-            <li>✅ Serve como referência para acompanhar o custo de vida e a inflação.</li>
-            <li>✅ Ajuda famílias e governos a planejar gastos com alimentação.</li>
-            <li>✅ É usada para avaliar o poder de compra e a qualidade de vida.</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>📈 Inflação e o Preço dos Itens Básicos</h2>
-        <p>A inflação é o aumento geral dos preços de produtos e serviços. Quando atinge itens básicos, o custo de vida aumenta e o dinheiro compra menos.</p>
-
-        <div class="esquema">
-            <svg class="esquema-svg" width="600" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="aumentoGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-                        <stop offset="0%" style="stop-color:#bbf7d0"/>
-                        <stop offset="50%" style="stop-color:#fef08a"/>
-                        <stop offset="100%" style="stop-color:#fca5a5"/>
-                    </linearGradient>
-                </defs>
-                
-                <!-- Eixo -->
-                <line x1="60" y1="200" x2="540" y2="200" stroke="#94a3b8" stroke-width="2"/>
-                <line x1="60" y1="30" x2="60" y2="200" stroke="#94a3b8" stroke-width="2"/>
-                <text x="545" y="205" font-size="12" fill="#475569">→ Tempo</text>
-                <text x="30" y="40" font-size="12" fill="#475569">Preço ↑</text>
-                
-                <!-- Curva de aumento -->
-                <path d="M60,170 L140,150 L220,120 L300,85 L380,55 L460,40 L540,30" 
-                    stroke="#dc2626" stroke-width="4" fill="none" stroke-linecap="round"/>
-                <path d="M60,170 L140,150 L220,120 L300,85 L380,55 L460,40 L540,30 L540,200 L60,200 Z" 
-                    fill="url(#aumentoGrad)" opacity="0.45"/>
-                
-                <!-- Itens -->
-                <text x="120" y="225" font-size="11" fill="#475569">🍎 Alimentos</text>
-                <text x="230" y="225" font-size="11" fill="#475569">🔥 Gás/Energia</text>
-                <text x="360" y="225" font-size="11" fill="#475569">🧼 Higiene</text>
-                <text x="470" y="225" font-size="11" font-weight="bold" fill="#dc2626">↑ Custo de vida</text>
-                
-                <!-- Impacto -->
-                <rect x="380" y="90" width="180" height="70" rx="10" fill="#fef2f2" stroke="#f87171" stroke-width="2"/>
-                <text x="470" y="115" text-anchor="middle" font-size="13" font-weight="bold" fill="#b91c1c">Menos poder de compra</text>
-                <text x="470" y="140" text-anchor="middle" font-size="11" fill="#7f1d1d">↓ Mesma renda = menos itens</text>
-            </svg>
-        </div>
-
-        <p>Com preços mais altos, muitas famílias precisam reorganizar o orçamento, cortar gastos e priorizar o que é essencial.</p>
-    </div>
-
-    <div class="card">
-        <h2>🔍 Analisando o Impacto na Prática</h2>
-        <p>Imagine uma família brasileira com renda fixa mensal. Com a inflação, os preços da cesta básica sobem — e a família gasta <strong>mais</strong> para comprar os mesmos alimentos. Consequência: sobra menos dinheiro para transporte, saúde, educação e lazer.</p>
-
-        <div class="esquema">
-            <svg class="esquema-svg" width="620" height="220" viewBox="0 0 620 220" xmlns="http://www.w3.org/2000/svg">
-                <!-- Renda -->
-                <rect x="20" y="30" width="180" height="60" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
-                <text x="110" y="65" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">💰 Renda Fixa</text>
-                
-                <!-- Seta -->
-                <path d="M200,60 L240,60" stroke="#94a3b8" stroke-width="3" fill="none" marker-end="url(#seta)"/>
-                
-                <!-- Antes -->
-                <rect x="260" y="30" width="150" height="60" rx="10" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
-                <text x="335" y="55" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">✅ Antes</text>
-                <text x="335" y="75" text-anchor="middle" font-size="11" fill="#475569">Cesta barata → sobra dinheiro</text>
-                
-                <!-- Depois -->
-                <rect x="260" y="130" width="150" height="60" rx="10" fill="#fef2f2" stroke="#f87171" stroke-width="2"/>
-                <text x="335" y="155" text-anchor="middle" font-size="13" font-weight="bold" fill="#b91c1c">⚠️ Depois (Inflação)</text>
-                <text x="335" y="175" text-anchor="middle" font-size="11" fill="#7f1d1d">Cesta cara → sobra pouco</text>
-                
-                <!-- Ações -->
-                <rect x="440" y="80" width="160" height="90" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
-                <text x="520" y="105" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">💡 Soluções</text>
-                <text x="520" y="125" text-anchor="middle" font-size="10" fill="#78350f">• Priorizar essenciais</text>
-                <text x="520" y="142" text-anchor="middle" font-size="10" fill="#78350f">• Pesquisar preços</text>
-                <text x="520" y="159" text-anchor="middle" font-size="10" fill="#78350f">• Evitar desperdícios</text>
-            </svg>
-        </div>
-
-        <p class="destaque"><strong>Conclusão:</strong> A inflação afeta diretamente o custo da cesta básica e reduz o poder de compra. Por isso, o planejamento financeiro é fundamental para garantir que as necessidades básicas sejam atendidas.</p>
-    </div>
-
-    <div class="card">
-        <h2>✅ Conclusão Geral</h2>
-        <p>Compreender a relação entre inflação, preços dos itens básicos e o orçamento doméstico ajuda as famílias a tomar decisões mais conscientes.</p>
-        <p>Ao entender que a inflação aumenta preços e reduz o poder de compra, é possível: priorizar despesas essenciais, pesquisar preços, evitar desperdícios, economizar e criar uma reserva para imprevistos.</p>
-        <p class="destaque"><strong>Em resumo:</strong> Conhecer essa relação permite fazer escolhas mais conscientes, controlar melhor o orçamento e enfrentar o aumento do custo de vida com mais segurança.</p>
-    </div>
-
-    
-
+    <!-- Aula 01 -->
+    <section id="aula-01">
+        <h2>Aula 01: A importância do orçamento familiar
+</h2>
+        <p>
 </body>
 </html>
 
@@ -731,7 +399,462 @@
 </div>
 
 </body>
-</html>
+</html></p>
+    </section>
+
+
+
+    
+    <!-- Aula 02 -->
+    <section id="aula-02">
+        <h2>Aula 02: Orçamento doméstico – Parte 1
+</h2>
+        <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02: Orçamento Doméstico – Parte 1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.2);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #1e40af;
+            margin: 30px 0 15px;
+            font-size: 1.4rem;
+            border-left: 4px solid #3b82f6;
+            padding-left: 12px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.02rem;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-bottom: 18px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .destaque {
+            background-color: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 18px 0;
+        }
+
+        .alerta {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 18px 0;
+        }
+
+        .esquema {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+        }
+
+        .esquema-svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .grade-despesas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 18px;
+            margin: 20px 0;
+        }
+
+        .tipo-despesa {
+            padding: 18px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .fixas { background-color: #dbeafe; color: #1e40af; }
+        .variaveis { background-color: #dcfce7; color: #166534; }
+        .essenciais { background-color: #fef3c7; color: #92400e; }
+        .superfluas { background-color: #f3e8ff; color: #6b21a8; }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Aula 02: Orçamento Doméstico – Parte 1</h1>
+        <p>Inflação, poder de compra e planejamento financeiro</p>
+    </header>
+
+    <div class="card">
+        <h2>📉 Inflação e Poder de Compra</h2>
+        <p>Mesmo que a renda da família permaneça a mesma, o aumento dos preços causado pela inflação reduz o poder de compra. Isso significa que o dinheiro passa a comprar menos produtos e serviços do que antes. Assim, despesas como alimentação, transporte, moradia e contas básicas consomem uma parte maior do orçamento familiar.</p>
+        
+        <div class="esquema">
+            <svg class="esquema-svg" width="650" height="220" viewBox="0 0 650 220" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="dinheiroGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="setaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                
+                <!-- Cenário sem inflação -->
+                <rect x="30" y="40" width="240" height="140" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+                <text x="150" y="65" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e40af">Sem Inflação</text>
+                <rect x="50" y="85" width="200" height="40" rx="6" fill="url(#dinheiroGrad)"/>
+                <text x="150" y="110" text-anchor="middle" font-size="14" fill="white">Renda = Poder de compra total</text>
+                <text x="150" y="145" text-anchor="middle" font-size="12" fill="#475569">Compram mais produtos ✅</text>
+                
+                <!-- Seta de diminuição -->
+                <path d="M290 110 L350 110 L340 100 M350 110 L340 120" stroke="url(#setaGrad)" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <text x="320" y="85" text-anchor="middle" font-size="13" fill="#dc2626">↑ Preços</text>
+                
+                <!-- Cenário com inflação -->
+                <rect x="370" y="40" width="240" height="140" rx="12" fill="#fef2f2" stroke="#f87171" stroke-width="2"/>
+                <text x="490" y="65" text-anchor="middle" font-size="16" font-weight="bold" fill="#b91c1c">Com Inflação</text>
+                <rect x="390" y="85" width="130" height="40" rx="6" fill="#fca5a5"/>
+                <text x="455" y="110" text-anchor="middle" font-size="14" fill="#7f1d1d">Mesma Renda</text>
+                <text x="490" y="145" text-anchor="middle" font-size="12" fill="#7f1d1d">Compram menos itens ⚠️</text>
+                <rect x="525" y="85" width="55" height="40" rx="6" fill="#fecaca" stroke-dasharray="4"/>
+            </svg>
+        </div>
+
+        <p>Por isso, o planejamento financeiro torna-se ainda mais importante. Ele ajuda a controlar os gastos, definir prioridades, evitar dívidas e organizar uma reserva para imprevistos. Além disso, permite que a família ajuste o orçamento de acordo com a nova realidade dos preços, mantendo o equilíbrio financeiro e buscando preservar sua qualidade de vida.</p>
+        
+        <div class="destaque">
+            <strong>Em resumo:</strong> A inflação diminui o poder de compra, e o planejamento financeiro é essencial para administrar melhor os recursos disponíveis e enfrentar o aumento do custo de vida.
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🏠 Economia Doméstica</h2>
+        <p>Economia doméstica é a administração do dinheiro e dos recursos de uma casa ou família, com o objetivo de atender às necessidades do dia a dia de forma organizada e equilibrada.</p>
+
+        <div class="esquema">
+            <svg class="esquema-svg" width="550" height="250" viewBox="0 0 550 250" xmlns="http://www.w3.org/2000/svg">
+                <rect x="175" y="20" width="200" height="70" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+                <text x="275" y="62" text-anchor="middle" font-size="17" font-weight="bold" fill="#1e40af">Economia Doméstica</text>
+                
+                <line x1="275" y1="90" x2="275" y2="110" stroke="#94a3b8" stroke-width="2"/>
+                
+                <rect x="30" y="110" width="140" height="50" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+                <text x="100" y="140" text-anchor="middle" font-size="12" fill="#166534">📊 Planejar orçamento</text>
+                
+                <rect x="205" y="110" width="140" height="50" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+                <text x="275" y="140" text-anchor="middle" font-size="12" fill="#92400e">💰 Controlar receitas e despesas</text>
+                
+                <rect x="380" y="110" width="140" height="50" rx="8" fill="#f3e8ff" stroke="#a855f7" stroke-width="2"/>
+                <text x="450" y="140" text-anchor="middle" font-size="12" fill="#6b21a8">✂️ Evitar gastos desnecessários</text>
+                
+                <rect x="115" y="175" width="140" height="50" rx="8" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2"/>
+                <text x="185" y="205" text-anchor="middle" font-size="12" fill="#0369a1">💧 Economizar recursos</text>
+                
+                <rect x="295" y="175" width="140" height="50" rx="8" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+                <text x="365" y="205" text-anchor="middle" font-size="12" fill="#be185d">🎯 Poupar para o futuro</text>
+            </svg>
+        </div>
+
+        <p class="destaque"><strong>Em resumo:</strong> Economia doméstica é o conjunto de práticas que ajuda a família a usar seus recursos de forma consciente, garantindo estabilidade financeira e melhor qualidade de vida.</p>
+    </div>
+
+    <div class="card">
+        <h2>📋 Classificação das Despesas</h2>
+        <p><em>"Nem todo gasto é igual. Existem gastos que somos obrigados a pagar. Outros dependem do nosso consumo. E alguns podem ser evitados."</em></p>
+        
+        <p>A classificação divide as despesas em quatro tipos:</p>
+
+        <div class="grade-despesas">
+            <div class="tipo-despesa fixas">
+                <strong>1. Fixas</strong>
+                <p style="font-size:0.9rem; margin-top:8px;">Valor praticamente igual todos os meses (ex.: aluguel, internet)</p>
+            </div>
+            <div class="tipo-despesa variaveis">
+                <strong>2. Variáveis</strong>
+                <p style="font-size:0.9rem; margin-top:8px;">Mudam conforme o consumo (ex.: energia, água)</p>
+            </div>
+            <div class="tipo-despesa essenciais">
+                <strong>3. Essenciais</strong>
+                <p style="font-size:0.9rem; margin-top:8px;">Imprescindíveis para a sobrevivência (ex.: alimentação, moradia)</p>
+            </div>
+            <div class="tipo-despesa superfluas">
+                <strong>4. Supérfluas</strong>
+                <p style="font-size:0.9rem; margin-top:8px;">Não são essenciais (ex.: lazer, assinaturas extras)</p>
+            </div>
+        </div>
+
+        <div class="alerta">
+            <strong>⚠️ Atenção:</strong> "Não existe problema em gastar com lazer. O problema aparece quando o lazer impede o pagamento das despesas essenciais." Despesas supérfluas podem ser reduzidas em momentos de aperto financeiro.
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🛒 Cesta Básica: Por que é importante?</h2>
+        <p>A cesta básica reúne alimentos e produtos essenciais para o dia a dia (arroz, feijão, óleo, leite, açúcar etc.).</p>
+
+        <div class="esquema">
+            <svg class="esquema-svg" width="600" height="230" viewBox="0 0 600 230" xmlns="http://www.w3.org/2000/svg">
+                <rect x="180" y="20" width="240" height="90" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+                <text x="300" y="55" text-anchor="middle" font-size="17" font-weight="bold" fill="#92400e">🛒 Cesta Básica</text>
+                <text x="300" y="80" text-anchor="middle" font-size="12" fill="#78350f">Produtos essenciais de consumo diário</text>
+                
+                <line x1="300" y1="110" x2="300" y2="125" stroke="#d97706" stroke-width="2"/>
+                
+                <rect x="30" y="130" width="170" height="80" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+                <text x="115" y="155" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">🍎 Alimentação adequada</text>
+                <text x="115" y="180" text-anchor="middle" font-size="11" fill="#475569">Garante o acesso a alimentos essenciais</text>
+                
+                <rect x="215" y="130" width="170" height="80" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+                <text x="300" y="155" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">📊 Indicador de inflação</text>
+                <text x="300" y="180" text-anchor="middle" font-size="11" fill="#475569">Ajuda a acompanhar o custo de vida</text>
+                
+                <rect x="400" y="130" width="170" height="80" rx="8" fill="#f3e8ff" stroke="#a855f7" stroke-width="2"/>
+                <text x="485" y="155" text-anchor="middle" font-size="13" font-weight="bold" fill="#6b21a8">💪 Qualidade de vida</text>
+                <text x="485" y="180" text-anchor="middle" font-size="11" fill="#475569">Avalia o poder de compra da população</text>
+            </svg>
+        </div>
+
+        <ul>
+            <li>✅ Garante acesso a alimentos essenciais para uma alimentação adequada.</li>
+            <li>✅ Serve como referência para acompanhar o custo de vida e a inflação.</li>
+            <li>✅ Ajuda famílias e governos a planejar gastos com alimentação.</li>
+            <li>✅ É usada para avaliar o poder de compra e a qualidade de vida.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>📈 Inflação e o Preço dos Itens Básicos</h2>
+        <p>A inflação é o aumento geral dos preços de produtos e serviços. Quando atinge itens básicos, o custo de vida aumenta e o dinheiro compra menos.</p>
+
+        <div class="esquema">
+            <svg class="esquema-svg" width="600" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="aumentoGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" style="stop-color:#bbf7d0"/>
+                        <stop offset="50%" style="stop-color:#fef08a"/>
+                        <stop offset="100%" style="stop-color:#fca5a5"/>
+                    </linearGradient>
+                </defs>
+                
+                <!-- Eixo -->
+                <line x1="60" y1="200" x2="540" y2="200" stroke="#94a3b8" stroke-width="2"/>
+                <line x1="60" y1="30" x2="60" y2="200" stroke="#94a3b8" stroke-width="2"/>
+                <text x="545" y="205" font-size="12" fill="#475569">→ Tempo</text>
+                <text x="30" y="40" font-size="12" fill="#475569">Preço ↑</text>
+                
+                <!-- Curva de aumento -->
+                <path d="M60,170 L140,150 L220,120 L300,85 L380,55 L460,40 L540,30" 
+                    stroke="#dc2626" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M60,170 L140,150 L220,120 L300,85 L380,55 L460,40 L540,30 L540,200 L60,200 Z" 
+                    fill="url(#aumentoGrad)" opacity="0.45"/>
+                
+                <!-- Itens -->
+                <text x="120" y="225" font-size="11" fill="#475569">🍎 Alimentos</text>
+                <text x="230" y="225" font-size="11" fill="#475569">🔥 Gás/Energia</text>
+                <text x="360" y="225" font-size="11" fill="#475569">🧼 Higiene</text>
+                <text x="470" y="225" font-size="11" font-weight="bold" fill="#dc2626">↑ Custo de vida</text>
+                
+                <!-- Impacto -->
+                <rect x="380" y="90" width="180" height="70" rx="10" fill="#fef2f2" stroke="#f87171" stroke-width="2"/>
+                <text x="470" y="115" text-anchor="middle" font-size="13" font-weight="bold" fill="#b91c1c">Menos poder de compra</text>
+                <text x="470" y="140" text-anchor="middle" font-size="11" fill="#7f1d1d">↓ Mesma renda = menos itens</text>
+            </svg>
+        </div>
+
+        <p>Com preços mais altos, muitas famílias precisam reorganizar o orçamento, cortar gastos e priorizar o que é essencial.</p>
+    </div>
+
+    <div class="card">
+        <h2>🔍 Analisando o Impacto na Prática</h2>
+        <p>Imagine uma família brasileira com renda fixa mensal. Com a inflação, os preços da cesta básica sobem — e a família gasta <strong>mais</strong> para comprar os mesmos alimentos. Consequência: sobra menos dinheiro para transporte, saúde, educação e lazer.</p>
+
+        <div class="esquema">
+            <svg class="esquema-svg" width="620" height="220" viewBox="0 0 620 220" xmlns="http://www.w3.org/2000/svg">
+                <!-- Renda -->
+                <rect x="20" y="30" width="180" height="60" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+                <text x="110" y="65" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">💰 Renda Fixa</text>
+                
+                <!-- Seta -->
+                <path d="M200,60 L240,60" stroke="#94a3b8" stroke-width="3" fill="none" marker-end="url(#seta)"/>
+                
+                <!-- Antes -->
+                <rect x="260" y="30" width="150" height="60" rx="10" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+                <text x="335" y="55" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">✅ Antes</text>
+                <text x="335" y="75" text-anchor="middle" font-size="11" fill="#475569">Cesta barata → sobra dinheiro</text>
+                
+                <!-- Depois -->
+                <rect x="260" y="130" width="150" height="60" rx="10" fill="#fef2f2" stroke="#f87171" stroke-width="2"/>
+                <text x="335" y="155" text-anchor="middle" font-size="13" font-weight="bold" fill="#b91c1c">⚠️ Depois (Inflação)</text>
+                <text x="335" y="175" text-anchor="middle" font-size="11" fill="#7f1d1d">Cesta cara → sobra pouco</text>
+                
+                <!-- Ações -->
+                <rect x="440" y="80" width="160" height="90" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+                <text x="520" y="105" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">💡 Soluções</text>
+                <text x="520" y="125" text-anchor="middle" font-size="10" fill="#78350f">• Priorizar essenciais</text>
+                <text x="520" y="142" text-anchor="middle" font-size="10" fill="#78350f">• Pesquisar preços</text>
+                <text x="520" y="159" text-anchor="middle" font-size="10" fill="#78350f">• Evitar desperdícios</text>
+            </svg>
+        </div>
+
+        <p class="destaque"><strong>Conclusão:</strong> A inflação afeta diretamente o custo da cesta básica e reduz o poder de compra. Por isso, o planejamento financeiro é fundamental para garantir que as necessidades básicas sejam atendidas.</p>
+    </div>
+
+    <div class="card">
+        <h2>✅ Conclusão Geral</h2>
+        <p>Compreender a relação entre inflação, preços dos itens básicos e o orçamento doméstico ajuda as famílias a tomar decisões mais conscientes.</p>
+        <p>Ao entender que a inflação aumenta preços e reduz o poder de compra, é possível: priorizar despesas essenciais, pesquisar preços, evitar desperdícios, economizar e criar uma reserva para imprevistos.</p>
+        <p class="destaque"><strong>Em resumo:</strong> Conhecer essa relação permite fazer escolhas mais conscientes, controlar melhor o orçamento e enfrentar o aumento do custo de vida com mais segurança.</p>
+    </div>
+</p>
+    </section>
+
+
+
+    
+    <!-- Aula 03 -->
+    <section id="aula-03">
+        <h2>Aula 03</h2>
+        <p>Conteúdo da Aula 03...</p>
+    </section>
+
+    <!-- Aula 04 -->
+    <section id="aula-04">
+        <h2>Aula 04</h2>
+        <p>Conteúdo da Aula 04...</p>
+    </section>
+
+    <!-- Aula 05 -->
+    <section id="aula-05">
+        <h2>Aula 05</h2>
+        <p>Conteúdo da Aula 05...</p>
+    </section>
+
+    <!-- Aula 06 -->
+    <section id="aula-06">
+        <h2>Aula 06</h2>
+        <p>Conteúdo da Aula 06...</p>
+    </section>
+
+    <!-- Aula 07 -->
+    <section id="aula-07">
+        <h2>Aula 07</h2>
+        <p>Conteúdo da Aula 07...</p>
+    </section>
+
+    <!-- Aula 08 -->
+    <section id="aula-08">
+        <h2>Aula 08</h2>
+        <p>Conteúdo da Aula 08...</p>
+    </section>
+
+    <!-- Aula 09 -->
+    <section id="aula-09">
+        <h2>Aula 09</h2>
+        <p>Conteúdo da Aula 09...</p>
+    </section>
+
+    <!-- Aula 10 -->
+    <section id="aula-10">
+        <h2>Aula 10</h2>
+        <p>Conteúdo da Aula 10...</p>
+    </section>
+
+    <!-- Aula 11 -->
+    <section id="aula-11">
+        <h2>Aula 11</h2>
+        <p>Conteúdo da Aula 11...</p>
+    </section>
+
+    <!-- Aula 12 -->
+    <section id="aula-12">
+        <h2>Aula 12</h2>
+        <p>Conteúdo da Aula 12...</p>
+    </section>
+
+    <!-- Aula 13 -->
+    <section id="aula-13">
+        <h2>Aula 13</h2>
+        <p>Conteúdo da Aula 13...</p>
+    </section>
+
+    <!-- Aula 14 -->
+    <section id="aula-14">
+        <h2>Aula 14</h2>
+        <p>Conteúdo da Aula 14...</p>
+    </section>
+
+</body>
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+    
+
 
 
 
