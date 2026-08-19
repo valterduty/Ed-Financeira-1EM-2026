@@ -1572,13 +1572,611 @@
 
   
         <div class="conteudo-aula" id="aula-5">
-            <h2>Aula 05</h2>
-            <p>Conteúdo da Aula 05...</p>
+            <h2>Aula 05: Criando um orçamento familiar</h2>
+            <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 05 — Criando um orçamento familiar</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #e8f4fd 0%, #fef9e7 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 40px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: #1a5276;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            font-size: 22px;
+            margin: 35px 0 15px;
+            border-left: 4px solid #f39c12;
+            padding-left: 12px;
+        }
+        h3 {
+            color: #d35400;
+            font-size: 18px;
+            margin: 20px 0 10px;
+        }
+        .intro-box {
+            background: #fef5e7;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .questions-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 15px 0;
+        }
+        .questions-list li {
+            padding: 10px 14px;
+            margin: 8px 0;
+            background: #fff;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        .families-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .family-card {
+            background: #f4f8fb;
+            border-radius: 12px;
+            padding: 20px;
+            border-top: 5px solid #27ae60;
+            transition: transform 0.2s;
+        }
+        .family-card:hover { transform: translateY(-4px); }
+        .family-card h3 { margin-top: 0; }
+        .income { color: #27ae60; font-weight: bold; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th { background: #2980b9; color: #fff; }
+        .expense-essential { color: #27ae60; font-weight: 500; }
+        .expense-superfluous { color: #e74c3c; font-weight: 500; }
+        .analysis-box {
+            background: #f0f9eb;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .svg-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .balance-positive { color: #27ae60; font-weight: bold; }
+        .balance-negative { color: #e74c3c; font-weight: bold; }
+        .summary-row {
+            font-weight: bold;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏠 Aula 05 — Criando um orçamento familiar</h1>
+            <p style="color:#666; font-size:16px;">Entenda a diferença entre gastos essenciais e supérfluos e aprenda a planejar melhor suas finanças!</p>
+        </header>
+
+        <!-- Ilustração principal -->
+        <div class="svg-container">
+            <svg width="420" height="220" viewBox="0 0 420 220" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="70" width="120" height="100" fill="#a9d5f7" rx="8" stroke="#2980b9" stroke-width="3"/>
+                <polygon points="70,30 130,70 10,70" fill="#2980b9"/>
+                <rect x="30" y="100" width="25" height="35" fill="#fff"/>
+                <rect x="85" y="100" width="25" height="35" fill="#fff"/>
+                <rect x="55" y="140" width="30" height="30" fill="#8b5a2b"/>
+                <rect x="160" y="40" width="110" height="160" fill="#fef0c7" rx="8" stroke="#f39c12" stroke-width="3"/>
+                <text x="215" y="70" text-anchor="middle" font-size="14" fill="#b45309" font-weight="bold">Renda</text>
+                <text x="215" y="95" text-anchor="middle" font-size="12" fill="#b45309">───────</text>
+                <text x="215" y="115" text-anchor="middle" font-size="13" fill="#27ae60">✓ Essenciais</text>
+                <text x="215" y="140" text-anchor="middle" font-size="13" fill="#e74c3c">✗ Supérfluos</text>
+                <text x="215" y="170" text-anchor="middle" font-size="12" fill="#b45309">───────</text>
+                <text x="215" y="190" text-anchor="middle" font-size="13" fill="#2c3e50">= Saldo</text>
+                <circle cx="340" cy="110" r="55" fill="#e8f8f5" stroke="#27ae60" stroke-width="3"/>
+                <text x="340" y="105" text-anchor="middle" font-size="13" fill="#27ae60" font-weight="bold">Equilíbrio</text>
+                <text x="340" y="125" text-anchor="middle" font-size="11" fill="#27ae60">Financeiro</text>
+            </svg>
         </div>
+
+        <h2>💡 Gastos essenciais vs. supérfluos</h2>
+        <p>Nem todo gasto tem a mesma prioridade no orçamento familiar. Reflita sobre a questão:</p>
+        <p style="font-weight:500; margin:10px 0;">Como podemos identificar se um gasto é realmente essencial ou se ele pode ser considerado supérfluo?</p>
+
+        <div class="intro-box">
+            <p style="margin-bottom:12px; font-weight:500;">Podemos identificar se um gasto é essencial perguntando:</p>
+            <ul class="questions-list">
+                <li>✅ <strong>Ele é necessário para viver com segurança e bem-estar?</strong><br>Exemplo: alimentação, moradia, água, luz e medicamentos.</li>
+                <li>✅ <strong>O que aconteceria se não fizéssemos esse gasto?</strong><br>Se a falta dele trouxer um problema importante, provavelmente é essencial.</li>
+                <li>✅ <strong>Existe uma alternativa mais barata?</strong><br>Às vezes, o gasto é necessário, mas podemos reduzir seu valor.</li>
+                <li>✅ <strong>É uma necessidade ou apenas um desejo?</strong><br>Gastos com lazer, compras por impulso e itens que não são necessários podem ser considerados supérfluos.</li>
+            </ul>
+            <p style="margin-top:15px; font-style:italic;">Assim, antes de gastar, é importante avaliar a necessidade, a prioridade e o impacto do gasto no orçamento familiar.</p>
+        </div>
+
+        <!-- Esquema visual de classificação -->
+        <div class="svg-container">
+            <svg width="500" height="190" viewBox="0 0 500 190" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="230" height="170" rx="12" fill="#e8f8f5" stroke="#27ae60" stroke-width="3"/>
+                <text x="125" y="40" text-anchor="middle" font-size="18" fill="#27ae60" font-weight="bold">Essenciais</text>
+                <line x1="30" y1="55" x2="220" y2="55" stroke="#27ae60" stroke-width="2"/>
+                <text x="25" y="80" font-size="13" fill="#2c3e50">🏠 Moradia e contas básicas</text>
+                <text x="25" y="105" font-size="13" fill="#2c3e50">🍎 Alimentação</text>
+                <text x="25" y="130" font-size="13" fill="#2c3e50">🚌 Transporte</text>
+                <text x="25" y="155" font-size="13" fill="#2c3e50">💊 Saúde e medicamentos</text>
+                
+                <rect x="260" y="10" width="230" height="170" rx="12" fill="#fdecea" stroke="#e74c3c" stroke-width="3"/>
+                <text x="375" y="40" text-anchor="middle" font-size="18" fill="#e74c3c" font-weight="bold">Supérfluos</text>
+                <line x1="280" y1="55" x2="470" y2="55" stroke="#e74c3c" stroke-width="2"/>
+                <text x="275" y="80" font-size="13" fill="#2c3e50">🍽️ Refeições fora / delivery</text>
+                <text x="275" y="105" font-size="13" fill="#2c3e50">🛍️ Compras por impulso</text>
+                <text x="275" y="130" font-size="13" fill="#2c3e50">🎮 Assinaturas e jogos</text>
+                <text x="275" y="155" font-size="13" fill="#2c3e50">👗 Roupas desnecessárias</text>
+            </svg>
+        </div>
+
+        <h2>📋 Desafio da vida financeira: análise das famílias</h2>
+        <p style="margin-bottom:20px;">Abaixo estão os dados de seis famílias. Vamos analisar cada uma, classificar os gastos e propor soluções!</p>
+
+        <div class="families-grid">
+            <!-- Família Ana Beatriz -->
+            <div class="family-card">
+                <h3>👨‍👩‍👧 Família Ana Beatriz</h3>
+                <p><strong>Composição:</strong> Ana Beatriz + pai + mãe</p>
+                <p class="income">💰 Renda mensal: R$ 3.800,00</p>
+                <table>
+                    <tr><th>Despesa</th><th>Valor</th><th>Tipo</th></tr>
+                    <tr><td>Aluguel + contas básicas</td><td>R$ 1.400,00</td><td class="expense-essential">Essencial</td></tr>
+                    <tr><td>Alimentação</td><td>R$ 1.000,00</td><td class="expense-essential">Essencial</td></tr>
+                    <tr><td>Transporte</td><td>R$ 450,00</td><td class="expense-essential">Essencial</td></tr>
+                    <tr><td>Internet + streamings</td><td>R$ 280,00</td><td class="expense-superfluous">Supérfluo¹</td></tr>
+                    <tr><td>Jantares fora e delivery</td><td>R$ 520,00</td><td class="expense-superfluous">Supérfluo</td></tr>
+                    <tr><td>Compras de roupas</td><td>R$ 350,00</td><td class="expense-superfluous">Supérfluo</td></tr>
+                    <tr class="summary-row"><td>Total</td><td>R$ 4.000,00</td><td class="balance-negative">-R$ 200,00</td></tr>
+                </table>
+                <p style="margin-top:10px; font-size:14px;"><strong>Solução:</strong> Reduzir jantares fora e reavaliar assinaturas → economizar ~R$ 400,00 → saldo positivo de ~R$ 200,00.</p>
+            </div>
+
+            <!-- Família João Pedro -->
+            <div class="family-card">
+                <h3>👨‍👩‍👦 Família João Pedro</h3>
+                <p><strong>Composição:</strong> João Pedro + pai + mãe</p>
+                <p class="income">💰 Renda mensal: R$ 3.200,00</p>
+                <table>
+                    <tr><th>Despesa</th><th>Valor</th><th>Tipo</th></tr>
+                    <tr><td>Aluguel + contas básicas</td><td>R$ 1.300,00</td><td class="expense-essential">Essencial</td></tr>
+                    <tr><td>Alimentação</td><td>R$ 900,00</td><td class="expense-essential">Essencial</td></tr>
+                    <tr><td>Transporte</td><td>R$ 400,00</td><td class="expense-essential">Essencial</td></tr>
+                    <tr><td>Internet + streaming + jogos</td><td>R$ 260,00</td><td class="expense-superfluous">Supérfluo¹</td></tr>
+                    <tr><td>Lanches fora e delivery</td><td>R$ 220,00</td><td class="expense-superfluous">Supérfluo</td></tr>
+                    <tr><td>Compras por impulso</td><td>R$ 180,00</td><td class="expense-superfluous">Supérfluo</td></tr>
+                    <tr class="summary-row"><td>Total</td><td>R$ 3.260,00</td><td class="balance-negative">-R$ 60,00</td></tr>
+                </table>
+                <p style="margin-top:10px; font-size:14px;"><strong>Solução:</strong> Cortar compras por impulso e reduzir lanches fora → economizar ~R$ 200,00 → saldo positivo de ~R$ 140,00.</p>
+            </div>
+
+            <!-- Família Vitória -->
+            <div class="family-card">
+                <h3>👩‍👧‍👦 Família Vitória</h3>
+                <p><strong>Composição:</strong> Vitória + mãe + 2 irmãos</p>
+                <p class="income">💰 Renda mensal: R$ 2.300,00</p>
+                <table>
+                    <tr><th>Despesa</th><th>Valor</th><th>Tipo</th></tr>
+                    <tr><td>Aluguel + contas básicas</td><td>R$ 900,00</td><td class="expense-essential">Essencial</td></tr>
+                    <tr><td>Alimentação</td><td>R$ 900,00</td><td class="expense-essential">Essencial</td></tr>
+                    <tr><td>Transporte e escola</td><td>R$ 300,00</td><td class="expense-essential">Essencial</td></tr>
+                    <tr><td>Internet + streaming</td><td>R$ 180,00</td><td class="expense-superfluous">Supérfluo¹</td></tr>
+                    <tr><td>Delivery e não planejados</td><td>R$ 220,00</td><td class="expense-superfluous">Supérfluo</td></tr>
+                    <tr class="summary-row"><td>Total</td><td>R$ 2.500,00</td><td class="balance-negative">-R$ 200,00</td></tr>
+                </table>
+                <p style="margin-top:10px; font-size:14px;"><strong>Solução:</strong> Eliminar delivery e gastos não planejados → economizar R$ 220,00 → saldo positivo de R$ 20,00.</p>
+            </div>
+
+            <!-- Família Lucas -->
+            <div class="family-card">
+                <h3>👨‍👦 Família Lucas</h3>
+                <p><strong>Composição:</strong> Lucas + pai</p>
+                <p class="income">💰 Renda mensal: R$ 4.500,00</p>
+                <table>
+                    <tr><th>Despesa</th><th>Valor</th><th>Tipo</th></tr>
+                    <tr><td>Aluguel + contas básicas</td><td>R$ 1.600,00</td><td class="expense-essential">Essencial</td></tr>
+                    <tr><td>Alimentação</td><td>R$ 1.200,00</td><td class="expense-essential">Essencial</td></tr>
+                    <tr><td>Transporte</td><td>R$ 550,00</td><td class="expense-essential">Essencial</td></tr>
+                    <tr><td>Internet + streaming + jogos</td><td>R$ 320,00</td><td class="expense-superfluous">Supérfluo¹</td></tr>
+                    <tr><td>Compras frequentes de jogos</td><td>R$ 450,00</td><td class="expense-superfluous">Supérfluo</td></tr>
+                    <tr><td>Lanches e delivery</td><td>R$ 420,00</td><td class="expense-superfluous">Supérfluo</td></tr>
+                    <tr class="summary-row"><td>Total</td><td>R$ 4.540,00</td><td class="balance-negative">-R$ 40,00</td></tr>
+                </table>
+                <p style="margin-top:10px; font-size:14px;"><strong>Solução:</strong> Reduzir compras de jogos e lanches → economizar ~R$ 200,00 → saldo positivo de ~R$ 160,00.</p>
+            </div>
+
+            <!-- Família Marcos -->
+            <div class="family-card">
+                <h3>👤 Família Marcos</h3>
+                <p><strong>Composição:</strong> Marcos (mora sozinho)</p>
+                <p class="income">💰 Renda mensal: R$ 4.200,00</p>
+                <table>
+                    <tr><th>Despesa</th><th>Valor</th><th>Tipo</th></tr>
+                    <tr><td>Aluguel + contas básicas</td><td>R$ 1.800,00</td><td class="expense-essential">Essencial</td></tr>
+                    <tr><td>Alimentação</td><td>R$ 1.000,00</td><td class="expense-essential">Essencial</td></tr>
+                    <tr><td>Internet + softwares</td><td>R$ 350,00</td><td class="expense-superfluous">Supérfluo¹</td></tr>
+                    <tr><td>Delivery e refeições fora</td><td>R$ 550,00</td><td class="expense-superfluous">Supérfluo</td></tr>
+                    <tr><td>Compras por impulso</td><td>R$ 650,00</td><td class="expense-superfluous">Supérfluo</td></tr>
+                    <tr class="summary-row"><td>Total</td><td>R$ 4.350,00</td><td class="balance-negative">-R$ 150,00</td></tr>
+                </table>
+                <p style="margin-top:10px; font-size:14px;"><strong>Solução:</strong> Reduzir refeições fora e limitar compras por impulso → economizar ~R$ 400,00 → saldo positivo de ~R$ 250,00.</p>
+            </div>
+
+            <!-- Família Gabriela -->
+            <div class="family-card">
+                <h3>👨‍👩‍👧 Família Gabriela</h3>
+                <p><strong>Composição:</strong> Gabriela + pai + mãe</p>
+                <p class="income">💰 Renda mensal: R$ 3.800,00</p>
+                <table>
+                    <tr><th>Despesa</th><th>Valor</th><th>Tipo</th></tr>
+                    <tr><td>Aluguel + contas básicas</td><td>R$ 1.600,00</td><td class="expense-essential">Essencial</td></tr>
+                    <tr><td>Alimentação</td><td>R$ 1.000,00</td><td class="expense-essential">Essencial</td></tr>
+                    <tr><td>Transporte e materiais</td><td>R$ 250,00</td><td class="expense-essential">Essencial</td></tr>
+                    <tr><td>Internet premium + TV</td><td>R$ 250,00</td><td class="expense-superfluous">Supérfluo¹</td></tr>
+                    <tr><td>Streaming (3 plataformas)</td><td>R$ 420,00</td><td class="expense-superfluous">Supérfluo</td></tr>
+                    <tr><td>Jantares fora</td><td>R$ 360,00</td><td class="expense-superfluous">Supérfluo</td></tr>
+                    <tr class="summary-row"><td>Total</td><td>R$ 3.880,00</td><td class="balance-negative">-R$ 80,00</td></tr>
+                </table>
+                <p style="margin-top:10px; font-size:14px;"><strong>Solução:</strong> Cancelar streamings duplicados e reduzir jantares → economizar ~R$ 300,00 → saldo positivo de ~R$ 220,00.</p>
+            </div>
+        </div>
+
+        <p style="margin-top:15px; font-size:13px; color:#555;"><em>¹ Nota: Parte do valor pode ser considerada essencial (apenas internet básica), mas o valor total inclui serviços premium e extras classificados como supérfluos.</em></p>
+
+        <!-- Resumo visual -->
+        <div class="svg-container">
+            <svg width="520" height="240" viewBox="0 0 520 240" xmlns="http://www.w3.org/2000/svg">
+                <text x="260" y="30" text-anchor="middle" font-size="18" fill="#2c3e50" font-weight="bold">📊 Passos para equilibrar o orçamento</text>
+                <rect x="30" y="50" width="100" height="130" rx="10" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+                <text x="80" y="80" text-anchor="middle" font-size="14" fill="#1976d2" font-weight="bold">1. Calcular</text>
+                <text x="80" y="105" text-anchor="middle" font-size="11" fill="#333">Renda menos</text>
+                <text x="80" y="122" text-anchor="middle" font-size="11" fill="#333">gastos totais</text>
+                <polygon points="145,115 160,100 160,130" fill="#ccc"/>
+
+                <rect x="170" y="50" width="100" height="130" rx="10" fill="#e8f5e9" stroke="#388e3c" stroke-width="2"/>
+                <text x="220" y="80" text-anchor="middle" font-size="14" fill="#388e3c" font-weight="bold">2. Classificar</text>
+                <text x="220" y="105" text-anchor="middle" font-size="11" fill="#333">Separar</text>
+                <text x="220" y="122" text-anchor="middle" font-size="11" fill="#333">essenciais e</text>
+                <text x="220" y="139" text-anchor="middle" font-size="11" fill="#333">supérfluos</text>
+                <polygon points="305,115 320,100 320,130" fill="#ccc"/>
+
+                <rect x="330" y="50" width="100" height="130" rx="10" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+                <text x="380" y="80" text-anchor="middle" font-size="14" fill="#f57c00" font-weight="bold">3. Reduzir</text>
+                <text x="380" y="105" text-anchor="middle" font-size="11" fill="#333">Cortar ou</text>
+                <text x="380" y="122" text-anchor="middle" font-size="11" fill="#333">limitar o</text>
+                <text x="380" y="139" text-anchor="middle" font-size="11" fill="#333">que não é essencial</text>
+                <polygon points="465,115 480,100 480,130" fill="#ccc"/>
+
+                <rect x="40" y="190" width="440" height="40" rx="10" fill="#fce4ec" stroke="#d81b60" stroke-width="2"/>
+                <text x="260" y="215" text-anchor="middle" font-size="15" fill="#d81b60" font-weight="bold">✅ Objetivo: Saldo positivo = economizar e planejar o futuro!</text>
+            </svg>
+        </div>
+
+        <div class="analysis-box">
+            <h2>📝 Conclusão e orientações gerais</h2>
+            <p>Analisando os dados de todas as famílias, verificamos que <strong>todas gastam mais do que recebem</strong> — o saldo é negativo em todos os casos. A boa notícia é que o desequilíbrio ocorre principalmente nos <strong>gastos supérfluos</strong>, o que significa que ajustes são possíveis sem comprometer a qualidade de vida básica.</p>
+            
+            <h3>🔑 Passos que cada família deve seguir:</h3>
+            <ol style="margin-left:20px; margin-top:10px;">
+                <li><strong>Calcule o saldo:</strong> Renda total menos gastos totais. Se estiver negativo, identifique onde está o excesso.</li>
+                <li><strong>Classifique cada despesa:</strong> Moradia, alimentação e transporte são essenciais. Já refeições fora, compras por impulso e assinaturas desnecessárias podem ser reduzidas.</li>
+                <li><strong>Reduza sem sofrer:</strong> Cancelar streamings duplicados, fazer refeições em casa e estabelecer um limite mensal para compras evita desperdícios.</li>
+                <li><strong>Proponha ajustes realistas:</strong> Não é preciso cortar todo o lazer de uma vez. Estabeleça limites e cumpra o planejamento.</li>
+            </ol>
+            
+            <p style="margin-top:15px; font-weight:500; color:#27ae60;">💡 Com pequenas mudanças, todas as famílias apresentadas podem alcançar um saldo positivo e começar a economizar!</p>
+        </div>
+    </div>
+</body>
+</html></p>
+        </div>
+
+
+
+
+    
         <div class="conteudo-aula" id="aula-6">
-            <h2>Aula 06</h2>
-            <p>Conteúdo da Aula 06...</p>
+            <h2>Aula 06: Como funciona o financiamento de bens? – Parte 1</h2>
+            <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06: Como funciona o financiamento de bens? – Parte 1</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Arial, sans-serif; background: #f0f4f8; color: #2d3748; line-height: 1.6; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 40px; }
+        h1 { color: #2b6cb0; text-align: center; margin-bottom: 10px; font-size: 2rem; }
+        .subtitle { text-align: center; color: #718096; margin-bottom: 40px; font-size: 1.1rem; }
+        h2 { color: #2f855a; margin: 35px 0 15px; font-size: 1.4rem; border-left: 4px solid #48bb78; padding-left: 12px; }
+        h3 { color: #2d3748; margin: 25px 0 12px; font-size: 1.15rem; }
+        p { margin-bottom: 14px; }
+        .box { background: #f7fafc; border-radius: 10px; padding: 20px; margin: 20px 0; border-left: 5px solid #3182ce; }
+        .alert { background: #fffaf0; border-left-color: #ed8936; }
+        .reflect { background: #f0fff4; border-left-color: #48bb78; font-style: italic; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px 15px; border: 1px solid #e2e8f0; text-align: left; }
+        th { background: #edf2f7; color: #2d3748; }
+        tr:nth-child(even) { background: #f7fafc; }
+        .svg-container { display: flex; justify-content: center; margin: 25px 0; }
+        ul, ol { margin: 15px 0; padding-left: 28px; }
+        li { margin-bottom: 8px; }
+        .highlight { background: #fef3c7; padding: 2px 6px; border-radius: 4px; font-weight: 500; }
+        .calculation { background: #ebf8ff; padding: 18px; border-radius: 10px; margin: 18px 0; font-family: Consolas, monospace; }
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            table { font-size: 0.9rem; }
+            th, td { padding: 8px 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Aula 06: Como funciona o financiamento de bens? – Parte 1</h1>
+        <p class="subtitle">Entenda as diferenças, custos e cuidados antes de financiar um bem</p>
+
+        <!-- Ilustração inicial -->
+        <div class="svg-container">
+            <svg width="520" height="220" viewBox="0 0 520 220" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="500" height="200" rx="12" fill="#f0f7ff" stroke="#3182ce" stroke-width="2"/>
+                <!-- Geladeira -->
+                <rect x="50" y="40" width="110" height="140" rx="8" fill="#e2e8f0" stroke="#2d3748" stroke-width="2"/>
+                <rect x="50" y="100" width="110" height="4" fill="#a0aec0"/>
+                <circle cx="145" cy="70" r="5" fill="#3182ce"/>
+                <circle cx="145" cy="120" r="5" fill="#3182ce"/>
+                <text x="75" y="165" font-size="13" fill="#2d3748">Geladeira</text>
+                <!-- Seta -->
+                <path d="M180 100 L240 100" stroke="#2f855a" stroke-width="4" marker-end="url(#arrowGreen)"/>
+                <defs>
+                    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <polygon points="0,0 10,5 0,10" fill="#2f855a"/>
+                    </marker>
+                    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <polygon points="0,0 10,5 0,10" fill="#ed8936"/>
+                    </marker>
+                </defs>
+                <!-- À Vista -->
+                <rect x="250" y="40" width="115" height="70" rx="8" fill="#c6f6d5" stroke="#2f855a" stroke-width="2"/>
+                <text x="275" y="65" font-size="14" font-weight="bold" fill="#22543d">À Vista</text>
+                <text x="260" y="88" font-size="12" fill="#276749">Menor custo</text>
+                <!-- Financiado -->
+                <rect x="250" y="125" width="115" height="55" rx="8" fill="#feebc8" stroke="#ed8936" stroke-width="2"/>
+                <text x="265" y="148" font-size="14" font-weight="bold" fill="#7c2d12">Financiado</text>
+                <text x="260" y="165" font-size="11" fill="#9c4221">Juros adicionais</text>
+                <!-- Valor comparativo -->
+                <text x="390" y="85" font-size="12" fill="#2f855a">R$ 2.000,00</text>
+                <text x="390" y="155" font-size="12" fill="#ed8936">R$ 2.400,00</text>
+                <path d="M370 80 L385 80" stroke="#2f855a" stroke-width="2"/>
+                <path d="M370 150 L385 150" stroke="#ed8936" stroke-width="2"/>
+            </svg>
         </div>
+
+        <h2>Vale a pena financiar?</h2>
+        <p>Imagine uma família que deseja comprar uma geladeira nova porque a antiga quebrou. No momento da compra, surge a dúvida: pagar à vista com desconto ou financiar em várias parcelas “que cabem no bolso?”.</p>
+        <p>Nem sempre. Para decidir se vale a pena financiar a geladeira, a família deve comparar o custo total do financiamento com o preço à vista com desconto.</p>
+
+        <div class="box">
+            <ul>
+                <li><strong>À vista:</strong> geralmente é melhor quando o desconto é significativo e a família consegue pagar sem comprometer o dinheiro necessário para despesas e emergências.</li>
+                <li><strong>Financiado:</strong> pode fazer sentido quando a geladeira é uma necessidade urgente e pagar à vista deixaria a família sem dinheiro para outras despesas importantes.</li>
+                <li><strong>Atenção às parcelas:</strong> uma parcela “que cabe no bolso” pode esconder um custo total bem maior por causa dos juros.</li>
+            </ul>
+        </div>
+
+        <p><strong>Exemplo:</strong> se a geladeira custa R$ 2.000,00 à vista, mas no financiamento serão 12 parcelas de R$ 200,00, o total será R$ 2.400,00. Nesse caso, a família pagará <span class="highlight">R$ 400,00 a mais</span> para financiar.</p>
+        <p>Portanto, antes de escolher, é importante perguntar: <em>“Quanto vou pagar no total?”</em>, e não apenas <em>“Quanto ficará cada parcela?”</em>.</p>
+
+        <div class="box reflect">
+            <h3>Para refletir</h3>
+            <p>O que pesa mais nessa decisão: o valor total pago ou o valor da parcela mensal?</p>
+        </div>
+
+        <h2>O que é financiamento?</h2>
+        <p>O financiamento é uma forma de crédito que permite comprar um bem imediatamente e pagar depois, geralmente em parcelas. Como há juros e outros encargos, o valor total pago costuma ser maior do que o preço à vista.</p>
+        <p>Exemplos: eletrodomésticos, celulares, veículos e imóveis.</p>
+        <p>Por isso, antes de financiar, é importante verificar o valor das parcelas, a quantidade de parcelas e o custo total da compra.</p>
+
+        <!-- Esquema visual: Juros -->
+        <div class="svg-container">
+            <svg width="500" height="200" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="480" height="180" rx="12" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+                <text x="20" y="38" font-size="16" font-weight="bold" fill="#7c2d12">Juros — o custo do dinheiro no tempo</text>
+                <circle cx="50" cy="80" r="8" fill="#ed8936"/>
+                <text x="70" y="85" font-size="13">Quanto maior o prazo → maior o total em juros</text>
+                <circle cx="50" cy="115" r="8" fill="#ed8936"/>
+                <text x="70" y="120" font-size="13">Parcelas menores → podem gerar mais juros no total</text>
+                <circle cx="50" cy="150" r="8" fill="#ed8936"/>
+                <text x="70" y="155" font-size="13">A taxa varia conforme o perfil e o tipo de crédito</text>
+                <path d="M20 175 L480 175" stroke="#f6c577" stroke-width="2" stroke-dasharray="6,4"/>
+            </svg>
+        </div>
+
+        <div class="box alert">
+            <p><strong>💡 Dica:</strong> não olhe apenas para o valor da parcela. Compare sempre quanto será pago no total.</p>
+            <p><strong>⚠️ Cuidado:</strong> as parcelas facilitam no presente, mas podem pesar no futuro.</p>
+        </div>
+
+        <h2>Compra à vista x compra financiada</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspecto</th>
+                    <th>Compra à vista</th>
+                    <th>Compra financiada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pagamento</td>
+                    <td>Único</td>
+                    <td>Parcelado</td>
+                </tr>
+                <tr>
+                    <td>Juros</td>
+                    <td>Geralmente não há</td>
+                    <td>Há cobrança de juros e encargos</td>
+                </tr>
+                <tr>
+                    <td>Valor final</td>
+                    <td>Geralmente menor</td>
+                    <td>Geralmente maior</td>
+                </tr>
+                <tr>
+                    <td>Impacto imediato</td>
+                    <td>Maior saída de dinheiro</td>
+                    <td>Menor saída imediata</td>
+                </tr>
+                <tr>
+                    <td>Compromisso futuro</td>
+                    <td>Nenhum</td>
+                    <td>Parcelas por meses ou anos</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Em resumo:</strong> pagar à vista pode reduzir o custo total, enquanto financiar facilita o pagamento ao longo do tempo, mas pode aumentar o valor final da compra.</p>
+        <p style="text-align:center; font-weight:600; color:#2b6cb0; margin-top:10px;">Fica a dica: A melhor escolha depende da situação financeira, da urgência e das prioridades da família!</p>
+
+        <!-- Gráfico de comparação -->
+        <div class="svg-container">
+            <svg width="460" height="240" viewBox="0 0 460 240" xmlns="http://www.w3.org/2000/svg">
+                <text x="130" y="30" font-size="16" font-weight="bold" fill="#2d3748">Comparação dos valores pagos</text>
+                <!-- Eixos -->
+                <line x1="60" y1="200" x2="420" y2="200" stroke="#cbd5e0" stroke-width="2"/>
+                <line x1="60" y1="40" x2="60" y2="200" stroke="#cbd5e0" stroke-width="2"/>
+                <!-- À vista bar -->
+                <rect x="120" y="80" width="80" height="120" rx="4" fill="#48bb78"/>
+                <text x="135" y="218" font-size="13" fill="#2d3748">À vista</text>
+                <text x="130" y="70" font-size="13" fill="#2f855a">R$ 2.000</text>
+                <!-- Financiado bar -->
+                <rect x="280" y="50" width="80" height="150" rx="4" fill="#ed8936"/>
+                <text x="285" y="218" font-size="13" fill="#2d3748">Financiado</text>
+                <text x="285" y="40" font-size="13" fill="#c05621">R$ 2.400</text>
+                <!-- Diferença -->
+                <rect x="280" y="50" width="80" height="30" fill="#feb2b6" opacity="0.7"/>
+                <text x="370" y="100" font-size="12" fill="#c53030">+R$ 400<br>de juros</text>
+                <path d="M360 65 L375 85 L360 105" stroke="#c53030" stroke-width="2" fill="none"/>
+            </svg>
+        </div>
+
+        <h2>Planejamento financeiro e acesso ao crédito</h2>
+        <p>Antes de contratar um empréstimo ou financiamento, é importante analisar se as parcelas realmente cabem no orçamento familiar.</p>
+        <p>O planejamento ajuda a:</p>
+        <ul>
+            <li>evitar o endividamento excessivo;</li>
+            <li>manter o equilíbrio do orçamento;</li>
+            <li>avaliar o custo total do crédito;</li>
+            <li>preservar recursos para imprevistos e necessidades importantes;</li>
+            <li>considerar o bem-estar, a segurança e o conforto da família.</li>
+        </ul>
+        <p><strong>Em resumo:</strong> crédito pode ser útil, mas deve ser usado com planejamento e responsabilidade.</p>
+
+        <h2>Analisando um financiamento no orçamento familiar</h2>
+        <p>Imagine uma família que deseja comprar um fogão no valor de R$ 1.200,00 para o qual estão disponíveis duas condições de pagamento:</p>
+        <ul>
+            <li>à vista: 10% de desconto;</li>
+            <li>financiado: 12 parcelas de R$ 120,00.</li>
+        </ul>
+
+        <h3>Qual é a diferença entre o valor à vista e o valor financiado?</h3>
+        <div class="calculation">
+            <strong>À vista:</strong> 10% de desconto sobre R$ 1.200,00<br>
+            → Desconto: R$ 120,00<br>
+            → Valor à vista: <strong>R$ 1.080,00</strong><br><br>
+            <strong>Financiado:</strong> 12 × R$ 120,00 = <strong>R$ 1.440,00</strong><br><br>
+            <strong>Diferença:</strong><br>
+            R$ 1.440,00 − R$ 1.080,00 = <strong style="color:#c53030;">R$ 360,00</strong>
+        </div>
+
+        <!-- Gráfico de comparação do fogão -->
+        <div class="svg-container">
+            <svg width="460" height="240" viewBox="0 0 460 240" xmlns="http://www.w3.org/2000/svg">
+                <text x="110" y="30" font-size="16" font-weight="bold" fill="#2d3748">Compra do fogão — comparação</text>
+                <line x1="60" y1="200" x2="420" y2="200" stroke="#cbd5e0" stroke-width="2"/>
+                <line x1="60" y1="40" x2="60" y2="200" stroke="#cbd5e0" stroke-width="2"/>
+                <!-- À vista -->
+                <rect x="120" y="104" width="80" height="96" rx="4" fill="#48bb78"/>
+                <text x="125" y="218" font-size="13">À vista</text>
+                <text x="125" y="94" font-size="13" fill="#2f855a">R$ 1.080</text>
+                <!-- Financiado -->
+                <rect x="280" y="68" width="80" height="132" rx="4" fill="#ed8936"/>
+                <text x="285" y="218" font-size="13">Financiado</text>
+                <text x="285" y="58" font-size="13" fill="#c05621">R$ 1.440</text>
+                <!-- Diferença -->
+                <rect x="280" y="68" width="80" height="36" fill="#feb2b6" opacity="0.7"/>
+                <text x="370" y="100" font-size="12" fill="#c53030">+R$ 360<br>de juros</text>
+            </svg>
+        </div>
+
+        <h3>Qual opção compromete mais o orçamento no longo prazo?</h3>
+        <p>A opção financiada compromete mais o orçamento no longo prazo, pois a família terá que pagar 12 parcelas de R$ 120,00, totalizando R$ 1.440,00. À vista, o pagamento é de R$ 1.080,00 e não há parcelas futuras.</p>
+
+        <h3>Em que situação o financiamento poderia ser uma escolha justificável?</h3>
+        <p>O financiamento pode ser uma escolha justificável quando a compra é necessária e urgente, a família não tem dinheiro suficiente para pagar à vista e as parcelas cabem com segurança no orçamento, sem comprometer despesas essenciais.</p>
+        <p>Por exemplo, se o fogão antigo quebrou e a família precisa de um novo para preparar as refeições, financiar pode ser uma alternativa, desde que o custo total e os juros sejam analisados.</p>
+
+        <h3>Que cuidados a família deveria ter antes de assumir esse compromisso?</h3>
+        <div class="box">
+            <ul>
+                <li>Comparar o preço à vista com o valor total financiado.</li>
+                <li>Verificar a taxa de juros e os encargos.</li>
+                <li>Conferir se as parcelas cabem no orçamento.</li>
+                <li>Avaliar se a compra é realmente necessária.</li>
+                <li>Evitar comprometer o dinheiro destinado a despesas essenciais e imprevistos.</li>
+                <li>Considerar o impacto das parcelas no orçamento durante todo o prazo do financiamento.</li>
+            </ul>
+        </div>
+
+        <p style="margin-top:25px; padding:15px; background:#edf2f7; border-radius:10px; font-weight:500;">
+            ✅ Em resumo: é importante analisar não apenas o valor da parcela, mas principalmente quanto será pago no total e se a família conseguirá manter os pagamentos sem prejudicar seu orçamento.
+        </p>
+    </div>
+</body>
+</html></p>
+        </div>
+
+
+
+    
         <div class="conteudo-aula" id="aula-7">
             <h2>Aula 07</h2>
             <p>Conteúdo da Aula 07...</p>
