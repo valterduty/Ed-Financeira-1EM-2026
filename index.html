@@ -4,12 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Educação Financeira 1º EM</title>
+    <style>
+        .titulo-destaque {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 2rem 0;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            
+            /* Configuração da animação */
+            animation: surgimentoSuave 1.2s ease-out forwards;
+            opacity: 0; /* Começa invisível */
+        }
+
+        /* Definição dos movimentos da animação */
+        @keyframes surgimentoSuave {
+            from {
+                opacity: 0;
+                transform: translateY(20px); /* Começa um pouco abaixo */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0); /* Termina na posição original */
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Educação Financeira 1º EM</h1>
-    <p>3º Bimestre - 2026</p>
+
+    <h1 class="titulo-destaque">Educação Financeira</h1>
+ <h1 class="titulo-destaque">1º EM</h1>
 </body>
 </html>
+
+
+
 
 
 
@@ -19,7 +53,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aulas - Conteúdo</title>
+    <title>Educação Financeira
+1º EM</title>
     <style>
         * {
             margin: 0;
@@ -41,11 +76,10 @@
             margin-bottom: 2.5rem;
         }
 
-        .lista-aulas {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 1rem;
-            margin-bottom: 3rem;
+        .item-aula {
+            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
         }
 
         .botao-aula {
@@ -58,6 +92,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: center;
+            width: 100%;
         }
 
         .botao-aula:hover {
@@ -74,15 +109,15 @@
         .conteudo-aula {
             background-color: white;
             padding: 2rem;
-            border-radius: 12px;
+            border-radius: 0 0 12px 12px;
             box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            min-height: 200px;
+            margin-top: -4px;
             display: none;
+            animation: aparece 0.4s ease;
         }
 
         .conteudo-aula.visivel {
             display: block;
-            animation: aparece 0.4s ease;
         }
 
         .conteudo-aula h2 {
@@ -92,36 +127,69 @@
             padding-bottom: 0.5rem;
         }
 
+        .navegacao {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .botao-nav {
+            padding: 0.7rem 1.1rem;
+            background-color: #744210;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .botao-nav:hover {
+            background-color: #5a350e;
+            transform: translateY(-2px);
+        }
+
+        .botao-nav:disabled {
+            background-color: #cbd5e0;
+            cursor: not-allowed;
+            transform: none;
+            opacity: 0.7;
+        }
+
+        .atalhos {
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
+            color: #718096;
+            text-align: center;
+            width: 100%;
+        }
+
         @keyframes aparece {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(-8px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .navegacao {
+                flex-direction: column;
+            }
+            .botao-nav {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h1>📚 Lista de Aulas</h1>
+    <h1>3º Bimestre</h1>
 
-    <!-- Lista dos botões das aulas -->
-    <div class="lista-aulas">
-        <button class="botao-aula" data-aula="1">Aula 01</button>
-        <button class="botao-aula" data-aula="2">Aula 02</button>
-        <button class="botao-aula" data-aula="3">Aula 03</button>
-        <button class="botao-aula" data-aula="4">Aula 04</button>
-        <button class="botao-aula" data-aula="5">Aula 05</button>
-        <button class="botao-aula" data-aula="6">Aula 06</button>
-        <button class="botao-aula" data-aula="7">Aula 07</button>
-        <button class="botao-aula" data-aula="8">Aula 08</button>
-        <button class="botao-aula" data-aula="9">Aula 09</button>
-        <button class="botao-aula" data-aula="10">Aula 10</button>
-        <button class="botao-aula" data-aula="11">Aula 11</button>
-        <button class="botao-aula" data-aula="12">Aula 12</button>
-        <button class="botao-aula" data-aula="13">Aula 13</button>
-        <button class="botao-aula" data-aula="14">Aula 14</button>
-    </div>
-
-    <!-- Área onde o conteúdo será exibido -->
-    <div id="conteudo-exibicao">
+    <!-- Aula 01 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="1">Aula 01: A Importância do Orçamento Familiar</button>
         <div class="conteudo-aula" id="aula-1">
             <h2>Aula 01: A Importância do Orçamento Familiar</h2>
             <p><!DOCTYPE html>
@@ -470,7 +538,7 @@
         <div class="questao">
             <strong>Questão 2</strong>
             <p>Por que manter os gastos menores que a renda reduz o estresse financeiro?</p>
-            <p><em>Resolução:</em></p>
+           
         </div>
         <div class="questao">
             <strong>Questão 3</strong>
@@ -487,13 +555,25 @@
 </html></p>
     </section>
 </p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="1" disabled>⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="1">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="1">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
         </div>
+    </div>
 
 
 
 
 
-      
+
+
+  
+    <!-- Aula 02 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="2">Aula 02: Orçamento Doméstico – Parte 1</button>
         <div class="conteudo-aula" id="aula-2">
             <h2>Aula 02: Orçamento Doméstico – Parte 1</h2>
             <p><!DOCTYPE html>
@@ -685,11 +765,11 @@
                 <rect x="30" y="110" width="140" height="50" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
                 <text x="100" y="140" text-anchor="middle" font-size="12" fill="#166534">📊 Planejar orçamento</text>
                 
-                <rect x="205" y="110" width="140" height="50" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+                <rect x="180" y="110" width="180" height="50" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
                 <text x="275" y="140" text-anchor="middle" font-size="12" fill="#92400e">💰 Controlar receitas e despesas</text>
                 
-                <rect x="380" y="110" width="140" height="50" rx="8" fill="#f3e8ff" stroke="#a855f7" stroke-width="2"/>
-                <text x="450" y="140" text-anchor="middle" font-size="12" fill="#6b21a8">✂️ Evitar gastos desnecessários</text>
+                <rect x="375" y="110" width="175" height="50" rx="8" fill="#f3e8ff" stroke="#a855f7" stroke-width="2"/>
+                <text x="465" y="140" text-anchor="middle" font-size="12" fill="#6b21a8">✂️ Evitar gastos desnecessários</text>
                 
                 <rect x="115" y="175" width="140" height="50" rx="8" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2"/>
                 <text x="185" y="205" text-anchor="middle" font-size="12" fill="#0369a1">💧 Economizar recursos</text>
@@ -746,15 +826,15 @@
                 
                 <rect x="30" y="130" width="170" height="80" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
                 <text x="115" y="155" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">🍎 Alimentação adequada</text>
-                <text x="115" y="180" text-anchor="middle" font-size="11" fill="#475569">Garante o acesso a alimentos essenciais</text>
+                <text x="115" y="180" text-anchor="middle" font-size="9" fill="#475569">Garante o acesso a alimentos essenciais</text>
                 
                 <rect x="215" y="130" width="170" height="80" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
                 <text x="300" y="155" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">📊 Indicador de inflação</text>
-                <text x="300" y="180" text-anchor="middle" font-size="11" fill="#475569">Ajuda a acompanhar o custo de vida</text>
+                <text x="300" y="180" text-anchor="middle" font-size="10" fill="#475569">Ajuda a acompanhar o custo de vida</text>
                 
                 <rect x="400" y="130" width="170" height="80" rx="8" fill="#f3e8ff" stroke="#a855f7" stroke-width="2"/>
                 <text x="485" y="155" text-anchor="middle" font-size="13" font-weight="bold" fill="#6b21a8">💪 Qualidade de vida</text>
-                <text x="485" y="180" text-anchor="middle" font-size="11" fill="#475569">Avalia o poder de compra da população</text>
+                <text x="485" y="180" text-anchor="middle" font-size="9" fill="#475569">Avalia o poder de compra da população</text>
             </svg>
         </div>
 
@@ -850,11 +930,24 @@
         <p class="destaque"><strong>Em resumo:</strong> Conhecer essa relação permite fazer escolhas mais conscientes, controlar melhor o orçamento e enfrentar o aumento do custo de vida com mais segurança.</p>
     </div>
 </p>
-    </section>
-</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="2">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="2">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="2">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
         </div>
+    </div>
 
-        <!-- Repita o padrão para as demais aulas -->
+
+
+
+
+
+  
+    <!-- Aula 03 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="3">Aula 03: Orçamento Doméstico – Parte 2</button>
         <div class="conteudo-aula" id="aula-3">
             <h2>Aula 03: Orçamento Doméstico – Parte 2</h2>
             <p><!DOCTYPE html>
@@ -1249,13 +1342,25 @@
 </body>
 </html> 
 </p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="3">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="3">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="3">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
         </div>
+    </div>
+
+
 
 
 
 
 
   
+    <!-- Aula 04 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="4">Aula 04: Orçamento Doméstico – Parte 3</button>
         <div class="conteudo-aula" id="aula-4">
             <h2>Aula 04: Orçamento Doméstico – Parte 3</h2>
             <p><!DOCTYPE html>
@@ -1413,7 +1518,7 @@
             
             <!-- Coluna Necessidade -->
             <rect x="40" y="50" width="140" height="140" rx="8" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
-            <text x="110" y="85" text-anchor="middle" font-size="18" font-weight="bold" fill="#1565c0">NECESSIDADE</text>
+            <text x="110" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#1565c0">NECESSIDADE</text>
             <text x="110" y="115" text-anchor="middle" font-size="13" fill="#333">Essencial</text>
             <text x="110" y="135" text-anchor="middle" font-size="13" fill="#333">Planejado</text>
             <text x="110" y="155" text-anchor="middle" font-size="13" fill="#333">Prioritário</text>
@@ -1423,7 +1528,7 @@
             
             <!-- Coluna Desejo/Impulso -->
             <rect x="240" y="50" width="140" height="140" rx="8" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
-            <text x="310" y="85" text-anchor="middle" font-size="18" font-weight="bold" fill="#e65100">DESEJO / IMPULSO</text>
+            <text x="310" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#e65100">DESEJO / IMPULSO</text>
             <text x="310" y="115" text-anchor="middle" font-size="13" fill="#333">Não essencial</text>
             <text x="310" y="135" text-anchor="middle" font-size="13" fill="#333">Não planejado</text>
             <text x="310" y="155" text-anchor="middle" font-size="13" fill="#333">Momento</text>
@@ -1550,13 +1655,13 @@
             <text x="190" y="50" text-anchor="middle" font-size="16" font-weight="bold" fill="#33691e">✅ CONTROLE = MAIS RECURSOS</text>
             
             <path d="M70 90 L140 90 L140 80 L170 100 L140 120 L140 110 L70 110 Z" fill="#558b2f"/>
-            <text x="45" y="105" font-size="12" fill="#33691e">Gastar com o essencial</text>
+            <text x="45" y="80" font-size="12" fill="#33691e">Gastar com o essencial</text>
             
             <path d="M240 90 L310 90 L310 80 L340 100 L310 120 L310 110 L240 110 Z" fill="#558b2f"/>
-            <text x="285" y="105" text-anchor="end" font-size="12" fill="#33691e">Evitar dívidas</text>
+            <text x="310" y="80" text-anchor="end" font-size="12" fill="#33691e">Evitar dívidas</text>
             
             <path d="M140 140 L240 140 L240 130 L270 150 L240 170 L240 160 L140 160 Z" fill="#558b2f"/>
-            <text x="190" y="175" text-anchor="middle" font-size="12" fill="#33691e">Alcançar objetivos!</text>
+            <text x="190" y="132" text-anchor="middle" font-size="12" fill="#33691e">Alcançar objetivos!</text>
         </svg>
     </div>
 </section>
@@ -1564,13 +1669,25 @@
 </body>
 </html> 
 </p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="4">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="4">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="4">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
         </div>
+    </div>
+
+
 
 
 
 
 
   
+    <!-- Aula 05 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="5">Aula 05: Criando um orçamento familiar</button>
         <div class="conteudo-aula" id="aula-5">
             <h2>Aula 05: Criando um orçamento familiar</h2>
             <p><!DOCTYPE html>
@@ -1578,7 +1695,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 05 — Criando um orçamento familiar</title>
+    <title>Aula 05: Criando um orçamento familiar</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -1908,12 +2025,23 @@
     </div>
 </body>
 </html></p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="5">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="5">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="5">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
         </div>
+    </div>
 
 
 
 
-    
+
+  
+    <!-- Aula 06 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="6">Aula 06: Como funciona o financiamento de bens? – Parte 1</button>
         <div class="conteudo-aula" id="aula-6">
             <h2>Aula 06: Como funciona o financiamento de bens? – Parte 1</h2>
             <p><!DOCTYPE html>
@@ -2090,7 +2218,7 @@
                 <!-- Financiado bar -->
                 <rect x="280" y="50" width="80" height="150" rx="4" fill="#ed8936"/>
                 <text x="285" y="218" font-size="13" fill="#2d3748">Financiado</text>
-                <text x="285" y="40" font-size="13" fill="#c05621">R$ 2.400</text>
+                <text x="285" y="46" font-size="13" fill="#c05621">R$ 2.400</text>
                 <!-- Diferença -->
                 <rect x="280" y="50" width="80" height="30" fill="#feb2b6" opacity="0.7"/>
                 <text x="370" y="100" font-size="12" fill="#c53030">+R$ 400 (juros)<br></text>
@@ -2135,8 +2263,8 @@
                 <line x1="60" y1="40" x2="60" y2="200" stroke="#cbd5e0" stroke-width="2"/>
                 <!-- À vista -->
                 <rect x="120" y="104" width="80" height="96" rx="4" fill="#48bb78"/>
-                <text x="125" y="218" font-size="13">À vista</text>
-                <text x="125" y="94" font-size="13" fill="#2f855a">R$ 1.080</text>
+                <text x="135" y="218" font-size="13">À vista</text>
+                <text x="165" y="94" font-size="13" fill="#2f855a">R$ 1.080</text>
                 <!-- Financiado -->
                 <rect x="280" y="68" width="80" height="132" rx="4" fill="#ed8936"/>
                 <text x="285" y="218" font-size="13">Financiado</text>
@@ -2172,90 +2300,224 @@
     </div>
 </body>
 </html></p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="6">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="6">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="6">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
         </div>
+    </div>
 
 
 
-    
+
+
+
+
+
+
+
+  
+    <!-- Aula 07 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="7">Aula 07</button>
         <div class="conteudo-aula" id="aula-7">
             <h2>Aula 07</h2>
             <p>Conteúdo da Aula 07...</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="7">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="7">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="7">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
         </div>
+    </div>
+
+    <!-- Aula 08 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="8">Aula 08</button>
         <div class="conteudo-aula" id="aula-8">
             <h2>Aula 08</h2>
             <p>Conteúdo da Aula 08...</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="8">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="8">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="8">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
         </div>
+    </div>
+
+    <!-- Aula 09 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="9">Aula 09</button>
         <div class="conteudo-aula" id="aula-9">
             <h2>Aula 09</h2>
             <p>Conteúdo da Aula 09...</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="9">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="9">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="9">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
         </div>
+    </div>
+
+    <!-- Aula 10 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="10">Aula 10</button>
         <div class="conteudo-aula" id="aula-10">
             <h2>Aula 10</h2>
             <p>Conteúdo da Aula 10...</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="10">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="10">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="10">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
         </div>
+    </div>
+
+    <!-- Aula 11 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="11">Aula 11</button>
         <div class="conteudo-aula" id="aula-11">
             <h2>Aula 11</h2>
             <p>Conteúdo da Aula 11...</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="11">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="11">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="11">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
         </div>
+    </div>
+
+    <!-- Aula 12 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="12">Aula 12</button>
         <div class="conteudo-aula" id="aula-12">
             <h2>Aula 12</h2>
             <p>Conteúdo da Aula 12...</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="12">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="12">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="12">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
         </div>
+    </div>
+
+    <!-- Aula 13 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="13">Aula 13</button>
         <div class="conteudo-aula" id="aula-13">
             <h2>Aula 13</h2>
             <p>Conteúdo da Aula 13...</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="13">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="13">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="13">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
         </div>
+    </div>
+
+    <!-- Aula 14 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="14">Aula 14 — Conclusão</button>
         <div class="conteudo-aula" id="aula-14">
             <h2>Aula 14 — Conclusão</h2>
             <p>Conteúdo da última aula. Coloque aqui resumos, avaliações finais e materiais complementares.</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="14">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="14">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="14" disabled>Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
         </div>
     </div>
 
 <script>
-    // Seleciona todos os botões e conteúdos
     const botoes = document.querySelectorAll('.botao-aula');
     const conteudos = document.querySelectorAll('.conteudo-aula');
+    const totalAulas = botoes.length;
+    let aulaAtual = null;
 
-    // Adiciona o clique em cada botão
+    // Exibe uma aula e fecha as demais
+    function exibirAula(numero) {
+        // Fecha todas as aulas
+        botoes.forEach(btn => btn.classList.remove('ativa'));
+        conteudos.forEach(ctd => ctd.classList.remove('visivel'));
+
+        // Abre a aula selecionada
+        aulaAtual = numero;
+        document.querySelector(`.botao-aula[data-aula="${numero}"]`).classList.add('ativa');
+        const conteudo = document.getElementById(`aula-${numero}`);
+        conteudo.classList.add('visivel');
+
+        // Rola suavemente até o conteúdo
+        conteudo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        atualizarEstadoBotoes();
+    }
+
+    // Ativa/desativa botões de navegação conforme a aula atual
+    function atualizarEstadoBotoes() {
+        document.querySelectorAll('.btn-anterior').forEach(btn => btn.disabled = (aulaAtual <= 1));
+        document.querySelectorAll('.btn-proximo').forEach(btn => btn.disabled = (aulaAtual >= totalAulas));
+    }
+
+    // Volta ao início (fecha todas as aulas e sobe ao topo)
+    function voltarInicio() {
+        aulaAtual = null;
+        botoes.forEach(btn => btn.classList.remove('ativa'));
+        conteudos.forEach(ctd => ctd.classList.remove('visivel'));
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Clique nos botões das aulas
     botoes.forEach(botao => {
         botao.addEventListener('click', () => {
-            // Remove destaque de todos os botões e esconde todos os conteúdos
-            botoes.forEach(btn => btn.classList.remove('ativa'));
-            conteudos.forEach(ctd => ctd.classList.remove('visivel'));
-
-            // Pega o número da aula clicada
-            const numeroAula = botao.getAttribute('data-aula');
-            
-            // Adiciona destaque ao botão clicado e mostra o conteúdo correspondente
-            botao.classList.add('ativa');
-            document.getElementById(`aula-${numeroAula}`).classList.add('visivel');
+            exibirAula(parseInt(botao.dataset.aula));
         });
+    });
+
+    // Navegação pelos botões dentro do conteúdo
+    document.addEventListener('click', e => {
+        if (e.target.classList.contains('btn-proximo') && aulaAtual < totalAulas) {
+            exibirAula(aulaAtual + 1);
+        }
+        if (e.target.classList.contains('btn-anterior') && aulaAtual > 1) {
+            exibirAula(aulaAtual - 1);
+        }
+        if (e.target.classList.contains('btn-inicio')) {
+            voltarInicio();
+        }
+    });
+
+    // Navegação pelo TECLADO
+    document.addEventListener('keydown', e => {
+        if (!aulaAtual) return;
+
+        if (e.key === 'ArrowLeft' && aulaAtual > 1) {
+            e.preventDefault();
+            exibirAula(aulaAtual - 1);
+        }
+        else if (e.key === 'ArrowRight' && aulaAtual < totalAulas) {
+            e.preventDefault();
+            exibirAula(aulaAtual + 1);
+        }
+        else if (e.key === 'Escape') {
+            e.preventDefault();
+            voltarInicio();
+        }
     });
 </script>
 
 </body>
-</html> 
-
-
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seções de Aulas</title>
-    <style>
-        section {
-            margin: 20px 0;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
-    </style>
-</head>
-<body>
-
-   
+</html>
 
 
 
@@ -2263,16 +2525,17 @@
 
 
 
-    
-    
+
 </main>
 
 <footer>
-    Prof.Valter@2026
+     Prof.Valter@2026
 </footer>
 
 </body>
 </html>
+
+
 
 
 
